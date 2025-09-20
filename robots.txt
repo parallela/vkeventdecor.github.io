@@ -1,0 +1,20 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://vkeventdecor.org/sitemap.xml
+
+# Allow all search engines to crawl the entire site
+Crawl-delay: 1
+
+# Disallow crawling of any admin or private directories (if any exist in the future)
+# Disallow: /admin/
+# Disallow: /private/
+
+# Allow crawling of all images and CSS
+Allow: /*.css
+Allow: /*.js
+Allow: /*.jpg
+Allow: /*.png
+Allow: /*.gif
+Allow: /*.ico
