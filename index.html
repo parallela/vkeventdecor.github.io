@@ -158,6 +158,7 @@
             display: none;
             flex-direction: column;
             cursor: pointer;
+            z-index: 1001;
         }
 
         .mobile-menu span {
@@ -166,6 +167,19 @@
             background: var(--dark);
             margin: 3px 0;
             transition: 0.3s;
+        }
+
+        /* Mobile menu animation */
+        .mobile-menu.active span:nth-child(1) {
+            transform: rotate(-45deg) translate(-5px, 6px);
+        }
+
+        .mobile-menu.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .mobile-menu.active span:nth-child(3) {
+            transform: rotate(45deg) translate(-5px, -6px);
         }
 
         /* Hero Section */
@@ -526,10 +540,71 @@
         @media (max-width: 768px) {
             .nav-links {
                 display: none;
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 100%;
+                height: 100vh;
+                background: rgba(255, 255, 255, 0.98);
+                backdrop-filter: blur(20px);
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                transition: right 0.3s ease;
+                z-index: 1000;
+            }
+
+            .nav-links.active {
+                display: flex;
+                right: 0;
+            }
+
+            .nav-links li {
+                margin: 2rem 0;
+            }
+
+            .nav-links a {
+                font-size: 1.5rem;
+                font-weight: 600;
             }
 
             .mobile-menu {
                 display: flex;
+            }
+
+            /* Make logo smaller on mobile */
+            .logo img {
+                height: 60px; /* Reduced from 90px */
+            }
+
+            .logo-text {
+                font-size: 1.4rem; /* Reduced from 2rem */
+            }
+
+            /* Reduce navbar padding on mobile */
+            .navbar {
+                padding: 0.8rem 3%; /* Reduced padding */
+            }
+
+            /* Hero logo smaller on mobile */
+            .hero-logo {
+                width: 180px; /* Reduced from 240px */
+                height: 180px; /* Reduced from 240px */
+                margin: 1rem auto 1.5rem auto; /* Reduced margins */
+            }
+
+            /* Hero title smaller on mobile */
+            .hero h1 {
+                font-size: clamp(2rem, 8vw, 4rem); /* Reduced from 3rem minimum */
+            }
+
+            .hero .subtitle {
+                font-size: clamp(1rem, 3vw, 1.4rem); /* Reduced from 1.2rem minimum */
+            }
+
+            /* Adjust floating elements for mobile */
+            .floating-element {
+                font-size: 1.5rem !important; /* Make decorative elements smaller */
             }
 
             .about-content,
@@ -539,6 +614,7 @@
 
             .gallery {
                 grid-template-columns: 1fr;
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Smaller min width */
             }
 
             section {
@@ -548,56 +624,54 @@
             .hero-content {
                 padding: 1rem;
             }
+
+            /* Contact section mobile adjustments */
+            .contact {
+                padding: 2rem 1rem;
+                margin: 1rem 0;
+            }
+
+            /* Form adjustments */
+            .form-group input,
+            .form-group textarea {
+                padding: 0.8rem;
+                font-size: 1rem;
+            }
+
+            /* Button adjustments */
+            .cta-button {
+                padding: 0.8rem 2rem;
+                font-size: 1rem;
+            }
         }
 
-        /* Intersection Observer Animation Classes - Optimized */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: all 0.4s ease;
-        }
+        /* Extra small screens */
+        @media (max-width: 480px) {
+            .logo img {
+                height: 50px; /* Even smaller for very small screens */
+            }
 
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
+            .logo-text {
+                font-size: 1.2rem;
+            }
 
-        .slide-left {
-            opacity: 0;
-            transform: translateX(-30px);
-            transition: all 0.4s ease;
-        }
+            .navbar {
+                padding: 0.6rem 2%;
+            }
 
-        .slide-left.visible {
-            opacity: 1;
-            transform: translateX(0);
-        }
+            .hero-logo {
+                width: 150px;
+                height: 150px;
+                margin: 0.5rem auto 1rem auto;
+            }
 
-        .slide-right {
-            opacity: 0;
-            transform: translateX(30px);
-            transition: all 0.4s ease;
-        }
+            .floating-element {
+                font-size: 1.2rem !important;
+            }
 
-        .slide-right.visible {
-            opacity: 1;
-            transform: translateX(0);
-        }
-
-        /* Floating Elements - Optimized */
-        .floating-element {
-            position: absolute;
-            animation: float 6s ease-in-out infinite;
-            opacity: 0.5;
-            will-change: transform;
-        }
-
-        .floating-element:nth-child(2) {
-            animation-delay: -2s;
-        }
-
-        .floating-element:nth-child(3) {
-            animation-delay: -4s;
+            section {
+                padding: 2rem 0.5rem;
+            }
         }
     </style>
 
@@ -733,7 +807,14 @@
         </div>
         <div class="contact">
             <div class="contact-content">
-                <form class="contact-form slide-left" action="https://formspree.io/f/mblanegn" method="POST">
+                <form class="contact-form slide-left" action="https://api.web3forms.com/submit" method="POST" id="contact-form">
+                    <!-- Web3Forms Access Key -->
+                    <input type="hidden" name="access_key" value="9a8b31d4-fd3a-4631-974f-29e5ef5221a5">
+                    <!-- Redirect after successful submission -->
+                    <input type="hidden" name="redirect" value="https://vkeventdecor.com/thanks.html">
+                    <!-- Optional: Honeypot field for spam protection -->
+                    <input type="hidden" name="botcheck" class="hidden" style="display: none;">
+                    
                     <div class="form-group">
                         <label for="name">Вашето име</label>
                         <input type="text" id="name" name="name" required>
@@ -748,13 +829,28 @@
                     </div>
                     <div class="form-group">
                         <label for="event-type">Тип събитие</label>
-                        <input type="text" id="event-type" name="event-type" placeholder="Сватба, рожден ден, корпоративно и др.">
+                        <input type="text" id="event-type" name="event_type" placeholder="Сватба, рожден ден, корпоративно и др.">
                     </div>
                     <div class="form-group">
                         <label for="message">Разкажете ни за вашата визия</label>
                         <textarea id="message" name="message" rows="5" placeholder="Опишете мечтаното си събитие..."></textarea>
                     </div>
-                    <button type="submit" class="cta-button">Изпрати съобщение</button>
+                    <button type="submit" class="cta-button" id="submit-button">
+                        <span class="button-text">Изпрати съобщение</span>
+                        <span class="button-loader" style="display: none;">Изпращане...</span>
+                    </button>
+                    
+                    <!-- Success Message -->
+                    <div id="success-message" style="display: none; margin-top: 1rem; padding: 1rem; background: rgba(212, 175, 55, 0.1); border: 1px solid var(--gold); border-radius: 10px; color: var(--dark);">
+                        <h4 style="color: var(--gold); margin-bottom: 0.5rem;">✅ Съобщението е изпратено успешно!</h4>
+                        <p>Благодарим ви за интереса! Скоро ще се свържем с вас за обсъждане на вашето мечтано събитие.</p>
+                    </div>
+                    
+                    <!-- Error Message -->
+                    <div id="error-message" style="display: none; margin-top: 1rem; padding: 1rem; background: rgba(220, 53, 69, 0.1); border: 1px solid #dc3545; border-radius: 10px; color: var(--dark);">
+                        <h4 style="color: #dc3545; margin-bottom: 0.5rem;">❌ Възникна грешка</h4>
+                        <p>Моля, опитайте отново или се свържете с нас директно по телефона.</p>
+                    </div>
                 </form>
                 <div class="contact-info slide-right">
                     <h3>Контактна информация</h3>
@@ -912,15 +1008,89 @@
             });
         });
 
-        // Mobile menu toggle (if needed in future)
+        // Mobile menu toggle - Updated implementation
         const mobileMenu = document.querySelector('.mobile-menu');
         const navLinks = document.querySelector('.nav-links');
         
         if (mobileMenu) {
             mobileMenu.addEventListener('click', () => {
+                // Toggle active class on mobile menu for animation
+                mobileMenu.classList.toggle('active');
+                // Toggle active class on nav links to show/hide menu
                 navLinks.classList.toggle('active');
+                
+                // Prevent body scroll when menu is open
+                if (navLinks.classList.contains('active')) {
+                    document.body.style.overflow = 'hidden';
+                } else {
+                    document.body.style.overflow = 'auto';
+                }
+            });
+
+            // Close mobile menu when clicking on navigation links
+            navLinks.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.remove('active');
+                    navLinks.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                });
+            });
+
+            // Close mobile menu when clicking outside
+            document.addEventListener('click', (e) => {
+                if (!mobileMenu.contains(e.target) && !navLinks.contains(e.target)) {
+                    mobileMenu.classList.remove('active');
+                    navLinks.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                }
             });
         }
+
+        // Disable custom cursor on mobile devices for better performance
+        if (window.innerWidth <= 768 || 'ontouchstart' in window) {
+            document.body.style.cursor = 'auto';
+            if (cursor) {
+                cursor.style.display = 'none';
+            }
+        }
+
+        // Optimized Web3Forms integration for contact form
+        const form = document.getElementById('contact-form');
+        const submitButton = document.getElementById('submit-button');
+        const successMessage = document.getElementById('success-message');
+        const errorMessage = document.getElementById('error-message');
+        
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+            const formData = new FormData(form);
+            submitButton.querySelector('.button-text').style.display = 'none';
+            submitButton.querySelector('.button-loader').style.display = 'inline-block';
+            
+            fetch(form.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            })
+            .then(response => {
+                if (response.ok) {
+                    form.reset();
+                    successMessage.style.display = 'block';
+                    errorMessage.style.display = 'none';
+                } else {
+                    throw new Error('Network response was not ok.');
+                }
+            })
+            .catch(error => {
+                successMessage.style.display = 'none';
+                errorMessage.style.display = 'block';
+            })
+            .finally(() => {
+                submitButton.querySelector('.button-text').style.display = 'inline-block';
+                submitButton.querySelector('.button-loader').style.display = 'none';
+            });
+        });
     </script>
 </body>
 </html>

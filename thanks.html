@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Благодарим ви! - VK Event Decor</title>
+    
+    <!-- Google Fonts: Pacifico for logo, Shantell Sans for all other text -->
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Shantell+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --gold: #D4AF37;
+            --rose-gold: #E8B4B8;
+            --pink: #F8BBD9;
+            --white: #FFFFFF;
+            --cream: #FDF8F5;
+            --dark: #2C2C2C;
+            --glass-bg: rgba(255, 255, 255, 0.1);
+            --glass-border: rgba(255, 255, 255, 0.2);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Shantell Sans', cursive;
+            line-height: 1.6;
+            background: linear-gradient(135deg, var(--cream) 0%, rgba(248, 187, 217, 0.1) 100%);
+            color: var(--dark);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .thanks-container {
+            text-align: center;
+            max-width: 600px;
+            padding: 3rem 2rem;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(212, 175, 55, 0.2);
+            border: 1px solid var(--glass-border);
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .logo {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin: 0 auto 2rem auto;
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
+            animation: pulse 2s infinite;
+        }
+
+        .success-icon {
+            font-size: 4rem;
+            color: var(--gold);
+            margin-bottom: 1.5rem;
+            animation: bounce 2s ease-in-out infinite;
+        }
+
+        h1 {
+            font-family: 'Pacifico', cursive;
+            font-size: 2.5rem;
+            background: linear-gradient(45deg, var(--gold), var(--pink));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+        }
+
+        .message {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.8;
+        }
+
+        .contact-info {
+            background: var(--glass-bg);
+            border-radius: 15px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border: 1px solid var(--glass-border);
+        }
+
+        .contact-detail {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            margin: 1rem 0;
+            font-size: 1.1rem;
+        }
+
+        .contact-detail i {
+            color: var(--gold);
+            font-size: 1.3rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(45deg, var(--gold), var(--pink));
+            color: white;
+            border-radius: 50%;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            transform: translateY(-3px) scale(1.1);
+            box-shadow: 0 10px 25px rgba(212, 175, 55, 0.3);
+        }
+
+        .back-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: linear-gradient(45deg, var(--gold), var(--rose-gold));
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            margin-top: 2rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
+        }
+
+        .back-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.4);
+        }
+
+        /* Floating decorative elements */
+        .floating-element {
+            position: absolute;
+            animation: float 6s ease-in-out infinite;
+            opacity: 0.3;
+            font-size: 2rem;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
+            }
+            50% {
+                box-shadow: 0 15px 40px rgba(212, 175, 55, 0.5);
+            }
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-20px) rotate(180deg);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .thanks-container {
+                margin: 1rem;
+                padding: 2rem 1.5rem;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            .message {
+                font-size: 1.1rem;
+            }
+
+            .logo {
+                width: 100px;
+                height: 100px;
+            }
+
+            .success-icon {
+                font-size: 3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Floating decorative elements -->
+    <div class="floating-element" style="top: 10%; left: 10%; color: var(--gold);">✨</div>
+    <div class="floating-element" style="top: 20%; right: 15%; color: var(--pink); animation-delay: -2s;">🎉</div>
+    <div class="floating-element" style="bottom: 20%; left: 20%; color: var(--rose-gold); animation-delay: -4s;">🎈</div>
+    <div class="floating-element" style="bottom: 10%; right: 10%; color: var(--gold); animation-delay: -3s;">💫</div>
+
+    <div class="thanks-container">
+        <img src="logo.jpg" alt="VK Event Decor" class="logo">
+        
+        <div class="success-icon">
+            ✅
+        </div>
+        
+        <h1>Благодарим ви!</h1>
+        
+        <p class="message">
+            Вашето съобщение беше изпратено успешно! Екипът на VK Event Decor ще се свърже с вас в най-скоро време за обсъждане на вашето мечтано събитие.
+        </p>
+        
+        <div class="contact-info">
+            <h3 style="color: var(--gold); margin-bottom: 1rem; font-family: 'Pacifico', cursive;">Очаквайте нашия обаждане</h3>
+            <div class="contact-detail">
+                <i class="fas fa-phone"></i>
+                <div>
+                    <strong>Телефон:</strong>
+                    <a href="tel:+359879851977" style="color: var(--dark); text-decoration: none; margin-left: 0.5rem;">+359879851977</a>
+                </div>
+            </div>
+            <div class="contact-detail">
+                <i class="fas fa-clock"></i>
+                <div>Обикновено отговаряме в рамките на 2-4 часа</div>
+            </div>
+        </div>
+
+        <div class="social-links">
+            <a href="https://www.facebook.com/profile.php?id=61574873767830" target="_blank" title="Facebook">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://www.instagram.com/vk.eventdecor" target="_blank" title="Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+        </div>
+
+        <a href="index.html" class="back-button">
+            <i class="fas fa-home"></i> Назад към началната страница
+        </a>
+    </div>
+</body>
+</html>
