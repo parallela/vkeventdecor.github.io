@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="bg">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VK Event Decor - Luxury Event Decorations</title>
+    <title>VK Event Decor - Луксозни декорации за събития</title>
     
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Playfair+Display:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Google Fonts Bulgarian Cyrillic -->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Playfair+Display:wght@400;700&family=Montserrat:wght@400;700&display=swap&subset=cyrillic" rel="stylesheet">
     
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -30,7 +30,7 @@
         }
 
         body {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Montserrat', 'Arial', sans-serif;
             line-height: 1.6;
             overflow-x: hidden;
             cursor: none;
@@ -48,17 +48,6 @@
             z-index: 9999;
             transition: transform 0.1s ease;
             box-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
-        }
-
-        .cursor-trail {
-            position: fixed;
-            width: 6px;
-            height: 6px;
-            background: var(--pink);
-            border-radius: 50%;
-            pointer-events: none;
-            z-index: 9998;
-            opacity: 0.7;
         }
 
         /* Confetti */
@@ -644,14 +633,14 @@
     <nav class="navbar">
         <div class="nav-container">
             <div class="logo">
-                <img src="logo.jpg" alt="VK Event Decor Logo">
+                <img src="logo.jpg" alt="VK Event Decor Лого">
                 <span class="logo-text">VK Event Decor</span>
             </div>
             <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#home">Начало</a></li>
+                <li><a href="#about">За нас</a></li>
+                <li><a href="#services">Услуги</a></li>
+                <li><a href="#contact">Контакт</a></li>
             </ul>
             <div class="mobile-menu">
                 <span></span>
@@ -666,42 +655,35 @@
         <div class="floating-element" style="top: 10%; left: 10%; font-size: 2rem; color: var(--gold);">✨</div>
         <div class="floating-element" style="top: 20%; right: 15%; font-size: 1.5rem; color: var(--pink);">🎉</div>
         <div class="floating-element" style="bottom: 20%; left: 20%; font-size: 2.5rem; color: var(--rose-gold);">🎈</div>
-        
         <div class="hero-content">
             <img src="logo.jpg" alt="VK Event Decor" class="hero-logo">
             <h1>VK Event Decor</h1>
-            <p class="subtitle">Creating Magical Moments with Vanessa & Kamelia</p>
-            <a href="#contact" class="cta-button">Let's Create Magic Together</a>
+            <p class="subtitle">Създаваме магични моменти с Ванеса & Камелия</p>
+            <a href="#contact" class="cta-button">Свържете се с нас</a>
         </div>
     </section>
 
     <!-- About Section -->
     <section id="about">
         <div class="section-title fade-in">
-            <h2>About Vanessa & Kamelia</h2>
-            <p>Passionate event decorators bringing dreams to life</p>
+            <h2>За Ванеса & Камелия</h2>
+            <p>Страстни декоратори, които превръщат мечтите в реалност</p>
         </div>
-        
         <div class="about-content">
             <div class="about-text slide-left">
-                <h3>Our Story</h3>
+                <h3>Нашата история</h3>
                 <p>
-                    Welcome to VK Event Decor, where creativity meets elegance! Founded by the dynamic duo Vanessa and Kamelia, 
-                    we specialize in transforming ordinary spaces into extraordinary experiences. With years of combined experience 
-                    in event planning and decoration, we understand that every celebration is unique and deserves a personal touch.
+                    Добре дошли във VK Event Decor, където креативността среща елегантността! Основано от динамичното дуо Ванеса и Камелия, ние се специализираме в преобразяването на обикновени пространства в изключителни преживявания. С години опит в планирането и декорирането на събития, знаем, че всяко празненство е уникално и заслужава персонален подход.
                 </p>
                 <p>
-                    Our passion lies in creating magical atmospheres that reflect your vision and exceed your expectations. 
-                    From intimate gatherings to grand celebrations, we bring artistry, attention to detail, and a touch of luxury 
-                    to every event we design.
+                    Нашата страст е да създаваме магична атмосфера, която отразява вашата визия и надминава очакванията ви. От интимни събирания до грандиозни тържества, ние влагаме изкуство, внимание към детайла и лукс във всяко събитие.
                 </p>
                 <p>
-                    Let us turn your special moments into unforgettable memories with our signature style of elegance, 
-                    creativity, and personalized service.
+                    Позволете ни да превърнем вашите специални моменти в незабравими спомени с нашия стил, креативност и персонално отношение.
                 </p>
             </div>
             <div class="about-image slide-right">
-                <img src="img1.jpg" alt="VK Event Decor Team">
+                <img src="img1.jpg" alt="Екипът на VK Event Decor">
             </div>
         </div>
     </section>
@@ -709,32 +691,29 @@
     <!-- Services/Gallery Section -->
     <section id="services">
         <div class="section-title fade-in">
-            <h2>Our Services</h2>
-            <p>Transforming visions into breathtaking realities</p>
+            <h2>Нашите услуги</h2>
+            <p>Превръщаме вашите идеи в зашеметяваща реалност</p>
         </div>
-        
         <div class="gallery">
             <div class="gallery-item fade-in">
-                <img src="img1.jpg" alt="Wedding Decorations">
+                <img src="img1.jpg" alt="Сватбена декорация">
                 <div class="gallery-content">
-                    <h3>Wedding Decorations</h3>
-                    <p>Romantic and elegant setups for your special day, featuring luxurious floral arrangements, ambient lighting, and personalized touches that make your wedding truly magical.</p>
+                    <h3>Сватбена декорация</h3>
+                    <p>Романтични и елегантни аранжировки за вашия специален ден – луксозни цветя, атмосферен осветление и персонални акценти, които правят сватбата ви магична.</p>
                 </div>
             </div>
-            
             <div class="gallery-item fade-in">
-                <img src="img2.jpg" alt="Birthday Celebrations">
+                <img src="img2.jpg" alt="Декорация за рожден ден">
                 <div class="gallery-content">
-                    <h3>Birthday Celebrations</h3>
-                    <p>Fun and festive decorations for birthdays of all ages, from whimsical children's parties to sophisticated adult celebrations with custom themes and premium decorations.</p>
+                    <h3>Декорация за рожден ден</h3>
+                    <p>Забавни и празнични декорации за рождени дни на всякаква възраст – от приказни детски партита до стилни празненства за възрастни с индивидуални теми и премиум украса.</p>
                 </div>
             </div>
-            
             <div class="gallery-item fade-in">
-                <img src="img3.jpg" alt="Corporate Events">
+                <img src="img3.jpg" alt="Корпоративни събития">
                 <div class="gallery-content">
-                    <h3>Corporate Events</h3>
-                    <p>Professional and elegant corporate event decorations that impress clients and create memorable experiences for product launches, conferences, and company celebrations.</p>
+                    <h3>Корпоративни събития</h3>
+                    <p>Професионална и елегантна декорация за корпоративни събития, която впечатлява клиенти и създава незабравими преживявания за представяния, конференции и фирмени празници.</p>
                 </div>
             </div>
         </div>
@@ -743,40 +722,40 @@
     <!-- Contact Section -->
     <section id="contact">
         <div class="section-title fade-in">
-            <h2>Get in Touch</h2>
-            <p>Let's discuss your dream event</p>
+            <h2>Свържете се с нас</h2>
+            <p>Нека обсъдим вашето мечтано събитие</p>
         </div>
         <div class="contact">
             <div class="contact-content">
                 <form class="contact-form slide-left" action="https://formspree.io/f/mblanegn" method="POST">
                     <div class="form-group">
-                        <label for="name">Your Name</label>
+                        <label for="name">Вашето име</label>
                         <input type="text" id="name" name="name" required>
                     </div>
                     <div class="form-group">
-                        <label for="email">Email Address</label>
+                        <label for="email">Имейл адрес</label>
                         <input type="email" id="email" name="email" required>
                     </div>
                     <div class="form-group">
-                        <label for="phone">Phone Number</label>
+                        <label for="phone">Телефон</label>
                         <input type="tel" id="phone" name="phone">
                     </div>
                     <div class="form-group">
-                        <label for="event-type">Event Type</label>
-                        <input type="text" id="event-type" name="event-type" placeholder="Wedding, Birthday, Corporate, etc.">
+                        <label for="event-type">Тип събитие</label>
+                        <input type="text" id="event-type" name="event-type" placeholder="Сватба, рожден ден, корпоративно и др.">
                     </div>
                     <div class="form-group">
-                        <label for="message">Tell us about your vision</label>
-                        <textarea id="message" name="message" rows="5" placeholder="Describe your dream event..."></textarea>
+                        <label for="message">Разкажете ни за вашата визия</label>
+                        <textarea id="message" name="message" rows="5" placeholder="Опишете мечтаното си събитие..."></textarea>
                     </div>
-                    <button type="submit" class="cta-button">Send Message</button>
+                    <button type="submit" class="cta-button">Изпрати съобщение</button>
                 </form>
                 <div class="contact-info slide-right">
-                    <h3>Contact Information</h3>
+                    <h3>Контактна информация</h3>
                     <div class="contact-detail">
                         <i class="fas fa-phone"></i>
                         <div>
-                            <strong>Phone</strong><br>
+                            <strong>Телефон</strong><br>
                             <a href="tel:+359879851977" style="color:inherit;text-decoration:none;">+359879851977</a>
                         </div>
                     </div>
@@ -791,90 +770,62 @@
 
     <!-- JavaScript -->
     <script>
-        // Custom Cursor
+        // Custom Cursor (single, elegant)
         const cursor = document.querySelector('.custom-cursor');
-        const trails = [];
-        
-        // Create cursor trails
-        for (let i = 0; i < 5; i++) {
-            const trail = document.createElement('div');
-            trail.className = 'cursor-trail';
-            document.body.appendChild(trail);
-            trails.push(trail);
-        }
-
         let mouseX = 0, mouseY = 0;
-        let positions = Array(trails.length).fill().map(() => ({ x: 0, y: 0 }));
-
         document.addEventListener('mousemove', (e) => {
             mouseX = e.clientX;
             mouseY = e.clientY;
-        });
-
-        function updateCursor() {
             cursor.style.left = mouseX - 10 + 'px';
             cursor.style.top = mouseY - 10 + 'px';
+        });
 
-            positions.unshift({ x: mouseX, y: mouseY });
-            positions.pop();
+        // Limit cursor animation to gold circle only
+        cursor.style.background = '#D4AF37';
+        cursor.style.boxShadow = '0 0 20px rgba(212, 175, 55, 0.5)';
 
-            trails.forEach((trail, index) => {
-                const pos = positions[index * 2] || { x: mouseX, y: mouseY };
-                trail.style.left = pos.x - 3 + 'px';
-                trail.style.top = pos.y - 3 + 'px';
-                trail.style.opacity = (1 - index * 0.2).toString();
-            });
-
-            requestAnimationFrame(updateCursor);
-        }
-        updateCursor();
-
-        // Confetti Animation
+        // Confetti Animation (optimized)
+        let confettiCount = 0;
         function createConfetti(x, y) {
             const colors = ['#D4AF37', '#F8BBD9', '#E8B4B8'];
-            const shapes = ['●', '■', '▲', '★', '♦'];
-            
-            for (let i = 0; i < 15; i++) {
+            const shapes = ['●', '★', '♦'];
+            const maxConfetti = 12;
+            if (confettiCount > 40) return; // Cap total confetti
+            for (let i = 0; i < maxConfetti; i++) {
+                confettiCount++;
                 const confetti = document.createElement('div');
                 confetti.className = 'confetti';
                 confetti.textContent = shapes[Math.floor(Math.random() * shapes.length)];
                 confetti.style.color = colors[Math.floor(Math.random() * colors.length)];
                 confetti.style.left = x + 'px';
                 confetti.style.top = y + 'px';
-                confetti.style.fontSize = Math.random() * 15 + 10 + 'px';
-                
+                confetti.style.fontSize = Math.random() * 10 + 8 + 'px';
                 document.body.appendChild(confetti);
-                
                 const angle = Math.random() * Math.PI * 2;
-                const velocity = Math.random() * 200 + 100;
-                const gravity = 500;
-                const life = Math.random() * 2 + 1;
-                
+                const velocity = Math.random() * 120 + 60;
+                const gravity = 400;
+                const life = Math.random() * 1.2 + 0.7;
                 let vx = Math.cos(angle) * velocity;
                 let vy = Math.sin(angle) * velocity;
                 let startTime = Date.now();
-                
                 function animate() {
                     const elapsed = (Date.now() - startTime) / 1000;
-                    
                     if (elapsed < life) {
                         const newX = x + vx * elapsed;
                         const newY = y + vy * elapsed + 0.5 * gravity * elapsed * elapsed;
-                        
                         confetti.style.left = newX + 'px';
                         confetti.style.top = newY + 'px';
                         confetti.style.opacity = (1 - elapsed / life).toString();
-                        confetti.style.transform = `rotate(${elapsed * 360}deg)`;
-                        
+                        confetti.style.transform = `rotate(${elapsed * 180}deg)`;
                         requestAnimationFrame(animate);
                     } else {
                         confetti.remove();
+                        confettiCount--;
                     }
                 }
                 animate();
             }
         }
-
         // Add confetti on button clicks
         document.querySelectorAll('button, .cta-button').forEach(button => {
             button.addEventListener('click', (e) => {
@@ -885,248 +836,70 @@
             });
         });
 
-        // Navbar scroll effect
-        const navbar = document.querySelector('.navbar');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 100) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
-        });
-
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Intersection Observer for animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.fade-in, .slide-left, .slide-right').forEach(el => {
-            observer.observe(el);
-        });
-
-        // Contact form handling
-        document.querySelector('.contact-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Create confetti at form submission
-            const formRect = this.getBoundingClientRect();
-            createConfetti(formRect.left + formRect.width / 2, formRect.top + formRect.height / 2);
-            
-            // Show success message (you can replace this with actual form submission)
-            alert('Thank you for your message! We\'ll get back to you soon to discuss your magical event.');
-            
-            // Reset form
-            this.reset();
-        });
-
-        // Mobile menu toggle
-        const mobileMenu = document.querySelector('.mobile-menu');
-        const navLinks = document.querySelector('.nav-links');
-        
-        mobileMenu.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-        });
-
-        // Parallax effect for hero section
-        window.addEventListener('scroll', () => {
-            const scrolled = window.pageYOffset;
-            const hero = document.querySelector('.hero');
-            const heroContent = document.querySelector('.hero-content');
-            
-            if (hero && scrolled < hero.offsetHeight) {
-                heroContent.style.transform = `translateY(${scrolled * 0.5}px)`;
-            }
-        });
-
-        // Add sparkle cursor effect on hover over special elements
-        document.querySelectorAll('.cta-button, .gallery-item, .social-links a').forEach(element => {
-            element.addEventListener('mouseenter', () => {
-                cursor.style.transform = 'scale(1.5)';
-                cursor.style.background = 'linear-gradient(45deg, #D4AF37, #F8BBD9)';
-            });
-            
-            element.addEventListener('mouseleave', () => {
-                cursor.style.transform = 'scale(1)';
-                cursor.style.background = '#D4AF37';
-            });
-        });
-
-        // Random floating decorations
-        function createFloatingDecoration() {
-            const decorations = ['✨', '🎉', '🎈', '💖', '🌸', '⭐'];
-            const decoration = document.createElement('div');
-            decoration.textContent = decorations[Math.floor(Math.random() * decorations.length)];
-            decoration.style.position = 'fixed';
-            decoration.style.left = Math.random() * window.innerWidth + 'px';
-            decoration.style.top = '-50px';
-            decoration.style.fontSize = Math.random() * 20 + 15 + 'px';
-            decoration.style.opacity = '0.6';
-            decoration.style.pointerEvents = 'none';
-            decoration.style.zIndex = '1';
-            decoration.style.color = ['#D4AF37', '#F8BBD9', '#E8B4B8'][Math.floor(Math.random() * 3)];
-            
-            document.body.appendChild(decoration);
-            
-            const duration = Math.random() * 5000 + 5000;
-            const startTime = Date.now();
-            
-            function animateDecoration() {
-                const elapsed = Date.now() - startTime;
-                const progress = elapsed / duration;
-                
-                if (progress < 1) {
-                    const y = -50 + (window.innerHeight + 100) * progress;
-                    decoration.style.top = y + 'px';
-                    decoration.style.transform = `rotate(${progress * 360}deg)`;
-                    requestAnimationFrame(animateDecoration);
-                } else {
-                    decoration.remove();
-                }
-            }
-            animateDecoration();
-        }
-
-        // Create floating decorations periodically
-        setInterval(createFloatingDecoration, 3000);
-
-        // Enhanced Balloon Animation on Mouse Movement
-        let balloonTimeout = null;
-        const balloonColors = ['#D4AF37', '#F8BBD9', '#E8B4B8', '#FF69B4', '#FFD700', '#FF1493', '#32CD32'];
-        const balloonEmojis = ['🎈', '🎈', '🎈', '🎈', '🎈']; // All balloons for consistency
+        // Balloon Animation (optimized)
+        let balloonCount = 0;
+        const maxBalloons = 10;
+        const balloonColors = ['#D4AF37', '#F8BBD9', '#E8B4B8', '#FF69B4', '#FFD700'];
+        const balloonEmojis = ['🎈'];
         const balloonDirections = [
-            { x: -1, y: -1 }, // Up-left
-            { x: 0, y: -1 },  // Up
-            { x: 1, y: -1 },  // Up-right
-            { x: -0.5, y: -1 }, // Slight left-up
-            { x: 0.5, y: -1 }   // Slight right-up
+            { x: -1, y: -1 }, { x: 0, y: -1 }, { x: 1, y: -1 }
         ];
-
         function createMouseBalloon(x, y) {
+            if (balloonCount >= maxBalloons) return;
+            balloonCount++;
             const balloon = document.createElement('div');
             balloon.className = 'balloon';
-            balloon.textContent = balloonEmojis[Math.floor(Math.random() * balloonEmojis.length)];
+            balloon.textContent = balloonEmojis[0];
             balloon.style.color = balloonColors[Math.floor(Math.random() * balloonColors.length)];
-            balloon.style.fontSize = Math.random() * 1.5 + 1.5 + 'rem'; // Varied sizes
-            balloon.style.left = x + Math.random() * 60 - 30 + 'px'; // Wider spread
-            balloon.style.top = y + Math.random() * 60 - 30 + 'px';
-            
-            // Choose random direction
+            balloon.style.fontSize = Math.random() * 1.2 + 1.2 + 'rem';
+            balloon.style.left = x + Math.random() * 40 - 20 + 'px';
+            balloon.style.top = y + Math.random() * 40 - 20 + 'px';
             const direction = balloonDirections[Math.floor(Math.random() * balloonDirections.length)];
-            const speed = Math.random() * 80 + 60; // Varied speed
-            const rotationSpeed = Math.random() * 360 + 180; // Random rotation
-            
+            const speed = Math.random() * 60 + 40;
             document.body.appendChild(balloon);
-            
-            // Enhanced animation with multiple movement patterns
             let startTime = Date.now();
-            const duration = Math.random() * 2000 + 3000; // 3-5 seconds
+            const duration = Math.random() * 1200 + 1800;
             const initialX = parseFloat(balloon.style.left);
             const initialY = parseFloat(balloon.style.top);
-            
             function animateBalloon() {
                 const elapsed = Date.now() - startTime;
                 const progress = elapsed / duration;
-                
                 if (progress < 1 && document.body.contains(balloon)) {
-                    // Enhanced movement with curves and waves
-                    const waveAmplitude = 20;
-                    const waveFrequency = 4;
-                    
                     const newY = initialY + (direction.y * speed * progress);
-                    const newX = initialX + (direction.x * speed * progress * 0.7) + 
-                                Math.sin(progress * Math.PI * waveFrequency) * waveAmplitude;
-                    
+                    const newX = initialX + (direction.x * speed * progress * 0.7);
                     balloon.style.top = newY + 'px';
                     balloon.style.left = newX + 'px';
-                    
-                    // Dynamic scaling and rotation
-                    const scale = 0.8 + (0.4 * Math.sin(progress * Math.PI * 2));
-                    const rotation = progress * rotationSpeed;
-                    balloon.style.transform = `scale(${scale}) rotate(${rotation}deg)`;
-                    
-                    // Fade out towards the end
-                    balloon.style.opacity = (1 - Math.pow(progress, 2)).toString();
-                    
+                    balloon.style.opacity = (1 - progress).toString();
                     requestAnimationFrame(animateBalloon);
                 } else {
                     if (document.body.contains(balloon)) {
                         balloon.remove();
+                        balloonCount--;
                     }
                 }
             }
             animateBalloon();
         }
-
-        // Enhanced mouse movement balloon creation with burst effects
+        // Mousemove balloon creation (much lower probability)
         document.addEventListener('mousemove', (e) => {
-            // Clear previous timeout to avoid too many balloons
-            if (balloonTimeout) {
-                clearTimeout(balloonTimeout);
+            if (Math.random() < 0.03) { // 3% chance per mousemove
+                createMouseBalloon(e.clientX, e.clientY);
             }
-            
-            // Create balloon with slight delay to control frequency
-            balloonTimeout = setTimeout(() => {
-                // Only create balloons occasionally (random chance)
-                if (Math.random() < 0.12) { // 12% chance on each mouse move
-                    createMouseBalloon(e.clientX, e.clientY);
-                }
-            }, 80); // Slightly faster response
         });
-
-        // Create balloon bursts on special interactions
+        // Balloon burst on special interactions (fewer balloons)
         document.querySelectorAll('.cta-button, .gallery-item, .logo').forEach(element => {
             element.addEventListener('mouseenter', (e) => {
-                // Create burst of balloons with varied timing and positions
-                for (let i = 0; i < 5; i++) {
+                for (let i = 0; i < 2; i++) {
                     setTimeout(() => {
                         const rect = element.getBoundingClientRect();
-                        const x = rect.left + rect.width / 2 + Math.random() * 120 - 60;
-                        const y = rect.top + rect.height / 2 + Math.random() * 120 - 60;
+                        const x = rect.left + rect.width / 2 + Math.random() * 40 - 20;
+                        const y = rect.top + rect.height / 2 + Math.random() * 40 - 20;
                         createMouseBalloon(x, y);
-                    }, i * 150);
+                    }, i * 120);
                 }
             });
         });
-
-        // Create balloon celebration on scroll milestones
-        let lastScrollY = 0;
-        window.addEventListener('scroll', () => {
-            const currentScrollY = window.pageYOffset;
-            const scrollDifference = Math.abs(currentScrollY - lastScrollY);
-            
-            // Create balloons on significant scroll movements
-            if (scrollDifference > 200) {
-                if (Math.random() < 0.3) { // 30% chance
-                    const x = Math.random() * window.innerWidth;
-                    const y = window.innerHeight;
-                    createMouseBalloon(x, y);
-                }
-                lastScrollY = currentScrollY;
-            }
-        });
+        // Remove floating decoration setInterval for performance
     </script>
 </body>
 </html>
