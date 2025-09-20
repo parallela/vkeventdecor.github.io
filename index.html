@@ -12,6 +12,26 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
+        /* Graphik font-face (assumes you upload .woff2 files to fonts/) */
+        @font-face {
+            font-family: 'Graphik';
+            src: url('fonts/Graphik-Regular.woff2') format('woff2'),
+                 url('fonts/Graphik-Regular.woff') format('woff');
+            font-weight: 400;
+            font-style: normal;
+            font-display: swap;
+            unicode-range: U+0400-04FF, U+0020-007F; /* Cyrillic + Latin */
+        }
+        @font-face {
+            font-family: 'Graphik';
+            src: url('fonts/Graphik-Bold.woff2') format('woff2'),
+                 url('fonts/Graphik-Bold.woff') format('woff');
+            font-weight: 700;
+            font-style: normal;
+            font-display: swap;
+            unicode-range: U+0400-04FF, U+0020-007F;
+        }
+
         :root {
             --gold: #D4AF37;
             --rose-gold: #E8B4B8;
@@ -30,7 +50,7 @@
         }
 
         body {
-            font-family: 'Montserrat', 'Arial', sans-serif;
+            font-family: 'Graphik', 'Montserrat', 'Arial', sans-serif;
             line-height: 1.6;
             overflow-x: hidden;
             cursor: none;
@@ -306,7 +326,7 @@
         }
 
         .about-text h3 {
-            font-family: 'Playfair Display', serif;
+            font-family: 'Graphik', 'Playfair Display', serif;
             font-size: 1.8rem;
             color: var(--gold);
             margin-bottom: 1rem;
@@ -365,7 +385,7 @@
         }
 
         .gallery-content h3 {
-            font-family: 'Playfair Display', serif;
+            font-family: 'Graphik', 'Playfair Display', serif;
             font-size: 1.5rem;
             color: var(--gold);
             margin-bottom: 0.5rem;
@@ -427,7 +447,7 @@
         }
 
         .contact-info h3 {
-            font-family: 'Playfair Display', serif;
+            font-family: 'Graphik', 'Playfair Display', serif;
             font-size: 1.8rem;
             color: var(--gold);
             margin-bottom: 1rem;
