@@ -30,49 +30,42 @@
         }
 
         body {
-            font-family: 'Montserrat', 'Arial', sans-serif;
+            font-family: 'Pacifico', cursive;
             line-height: 1.6;
             overflow-x: hidden;
             cursor: none;
             background: linear-gradient(135deg, var(--cream) 0%, rgba(248, 187, 217, 0.1) 100%);
+            color: var(--dark); /* Fix white content issue */
         }
 
-        /* Custom Cursor with subtle flicker */
+        /* Custom Cursor with optimized animation */
         .custom-cursor {
             position: fixed;
-            width: 20px;
-            height: 20px;
+            width: 16px;
+            height: 16px;
             background: var(--gold);
             border-radius: 50%;
             pointer-events: none;
             z-index: 9999;
-            transition: transform 0.1s ease;
-            box-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
-            animation: cursorFlicker 1.2s infinite alternate;
+            transition: transform 0.08s ease;
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+            animation: cursorFlicker 2s infinite alternate;
+            will-change: transform; /* Optimize performance */
         }
         @keyframes cursorFlicker {
-            0% { opacity: 1; box-shadow: 0 0 20px rgba(212,175,55,0.5); }
-            50% { opacity: 0.85; box-shadow: 0 0 24px rgba(212,175,55,0.7); }
-            100% { opacity: 1; box-shadow: 0 0 20px rgba(212,175,55,0.5); }
+            0% { opacity: 1; box-shadow: 0 0 15px rgba(212,175,55,0.4); }
+            100% { opacity: 0.9; box-shadow: 0 0 18px rgba(212,175,55,0.6); }
         }
 
-        /* Confetti */
+        /* Confetti - reduced for performance */
         .confetti {
-            position: fixed;
-            width: 8px; /* Made slightly smaller for mouse effect */
-            height: 8px;
-            pointer-events: none;
-            z-index: 9997;
-            border-radius: 50%;
-        }
-
-        .mouse-confetti {
             position: fixed;
             width: 6px;
             height: 6px;
             pointer-events: none;
-            z-index: 9996;
-            font-size: 8px;
+            z-index: 9997;
+            border-radius: 50%;
+            will-change: transform, opacity;
         }
 
         /* Navigation */
@@ -134,6 +127,7 @@
             text-decoration: none;
             color: var(--dark);
             font-weight: 500;
+            font-family: 'Pacifico', cursive; /* Use same font */
             position: relative;
             transition: all 0.3s ease;
         }
@@ -222,11 +216,11 @@
             -webkit-text-fill-color: transparent;
             background-clip: text;
             margin-bottom: 1rem;
-            animation: shimmer 3s ease-in-out infinite;
+            animation: shimmer 4s ease-in-out infinite; /* Slower animation */
         }
 
         .hero .subtitle {
-            font-family: 'Playfair Display', serif;
+            font-family: 'Pacifico', cursive; /* Use same font */
             font-size: clamp(1.2rem, 3vw, 1.8rem);
             color: var(--dark);
             margin-bottom: 2rem;
@@ -295,6 +289,7 @@
             font-size: 1.2rem;
             color: var(--dark);
             opacity: 0.7;
+            font-family: 'Pacifico', cursive; /* Use same font */
         }
 
         /* About Section */
@@ -309,10 +304,11 @@
             font-size: 1.1rem;
             line-height: 1.8;
             color: var(--dark);
+            font-family: 'Pacifico', cursive; /* Use same font */
         }
 
         .about-text h3 {
-            font-family: 'Playfair Display', serif;
+            font-family: 'Pacifico', cursive; /* Use same font */
             font-size: 1.8rem;
             color: var(--gold);
             margin-bottom: 1rem;
@@ -371,7 +367,7 @@
         }
 
         .gallery-content h3 {
-            font-family: 'Playfair Display', serif;
+            font-family: 'Pacifico', cursive; /* Use same font */
             font-size: 1.5rem;
             color: var(--gold);
             margin-bottom: 0.5rem;
@@ -380,6 +376,7 @@
         .gallery-content p {
             color: var(--dark);
             opacity: 0.8;
+            font-family: 'Pacifico', cursive; /* Use same font */
         }
 
         /* Contact Section */
@@ -411,6 +408,7 @@
         .form-group label {
             font-weight: 600;
             color: var(--dark);
+            font-family: 'Pacifico', cursive; /* Use same font */
         }
 
         .form-group input,
@@ -421,7 +419,7 @@
             background: var(--glass-bg);
             backdrop-filter: blur(10px);
             color: var(--dark);
-            font-family: inherit;
+            font-family: 'Pacifico', cursive; /* Use same font */
             transition: all 0.3s ease;
         }
 
@@ -433,7 +431,7 @@
         }
 
         .contact-info h3 {
-            font-family: 'Playfair Display', serif;
+            font-family: 'Pacifico', cursive; /* Use same font */
             font-size: 1.8rem;
             color: var(--gold);
             margin-bottom: 1rem;
@@ -449,6 +447,8 @@
             backdrop-filter: blur(10px);
             border-radius: 10px;
             border: 1px solid var(--glass-border);
+            color: var(--dark); /* Fix white text issue */
+            font-family: 'Pacifico', cursive; /* Use same font */
         }
 
         .contact-detail i {
@@ -484,7 +484,7 @@
         @keyframes fadeInUp {
             from {
                 opacity: 0;
-                transform: translateY(30px);
+                transform: translateY(20px);
             }
             to {
                 opacity: 1;
@@ -497,7 +497,7 @@
                 transform: translateY(0px) rotate(0deg);
             }
             50% {
-                transform: translateY(-20px) rotate(180deg);
+                transform: translateY(-15px) rotate(90deg);
             }
         }
 
@@ -506,7 +506,7 @@
                 box-shadow: 0 20px 40px rgba(212, 175, 55, 0.3);
             }
             50% {
-                box-shadow: 0 25px 50px rgba(212, 175, 55, 0.5);
+                box-shadow: 0 22px 44px rgba(212, 175, 55, 0.4);
             }
             100% {
                 box-shadow: 0 20px 40px rgba(212, 175, 55, 0.3);
@@ -515,10 +515,10 @@
 
         @keyframes shimmer {
             0% {
-                background-position: -1000px 0;
+                background-position: -200% 0;
             }
             100% {
-                background-position: 1000px 0;
+                background-position: 200% 0;
             }
         }
 
@@ -550,11 +550,11 @@
             }
         }
 
-        /* Intersection Observer Animation Classes */
+        /* Intersection Observer Animation Classes - Optimized */
         .fade-in {
             opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.6s ease;
+            transform: translateY(20px);
+            transition: all 0.4s ease;
         }
 
         .fade-in.visible {
@@ -564,8 +564,8 @@
 
         .slide-left {
             opacity: 0;
-            transform: translateX(-50px);
-            transition: all 0.6s ease;
+            transform: translateX(-30px);
+            transition: all 0.4s ease;
         }
 
         .slide-left.visible {
@@ -575,8 +575,8 @@
 
         .slide-right {
             opacity: 0;
-            transform: translateX(50px);
-            transition: all 0.6s ease;
+            transform: translateX(30px);
+            transition: all 0.4s ease;
         }
 
         .slide-right.visible {
@@ -584,22 +584,21 @@
             transform: translateX(0);
         }
 
-        /* Floating Elements */
+        /* Floating Elements - Optimized */
         .floating-element {
             position: absolute;
-            animation: float 4s ease-in-out infinite;
-            opacity: 0.6;
+            animation: float 6s ease-in-out infinite;
+            opacity: 0.5;
+            will-change: transform;
         }
 
         .floating-element:nth-child(2) {
-            animation-delay: -1s;
-        }
-
-        .floating-element:nth-child(3) {
             animation-delay: -2s;
         }
 
-        /* Remove balloon CSS classes */
+        .floating-element:nth-child(3) {
+            animation-delay: -4s;
+        }
     </style>
 
     <!-- SEO & Social Media Metadata -->
@@ -777,23 +776,36 @@
 
     <!-- JavaScript -->
     <script>
-        // Custom Cursor (single, elegant, flicker only)
+        // Optimized Custom Cursor with throttling
         const cursor = document.querySelector('.custom-cursor');
         let mouseX = 0, mouseY = 0;
+        let cursorUpdateId = null;
+        
+        function updateCursor() {
+            cursor.style.left = mouseX - 8 + 'px';
+            cursor.style.top = mouseY - 8 + 'px';
+            cursorUpdateId = null;
+        }
+        
         document.addEventListener('mousemove', (e) => {
             mouseX = e.clientX;
             mouseY = e.clientY;
-            cursor.style.left = mouseX - 10 + 'px';
-            cursor.style.top = mouseY - 10 + 'px';
+            if (!cursorUpdateId) {
+                cursorUpdateId = requestAnimationFrame(updateCursor);
+            }
         });
 
-        // Confetti Animation (optimized)
+        // Optimized Confetti Animation with reduced frequency
         let confettiCount = 0;
+        const maxTotalConfetti = 20; // Reduced from 40
+        
         function createConfetti(x, y) {
             const colors = ['#D4AF37', '#F8BBD9', '#E8B4B8'];
             const shapes = ['●', '★', '♦'];
-            const maxConfetti = 12;
-            if (confettiCount > 40) return; // Cap total confetti
+            const maxConfetti = 6; // Reduced from 12
+            
+            if (confettiCount > maxTotalConfetti) return;
+            
             for (let i = 0; i < maxConfetti; i++) {
                 confettiCount++;
                 const confetti = document.createElement('div');
@@ -802,15 +814,17 @@
                 confetti.style.color = colors[Math.floor(Math.random() * colors.length)];
                 confetti.style.left = x + 'px';
                 confetti.style.top = y + 'px';
-                confetti.style.fontSize = Math.random() * 10 + 8 + 'px';
+                confetti.style.fontSize = Math.random() * 8 + 6 + 'px'; // Smaller size
                 document.body.appendChild(confetti);
+                
                 const angle = Math.random() * Math.PI * 2;
-                const velocity = Math.random() * 120 + 60;
-                const gravity = 400;
-                const life = Math.random() * 1.2 + 0.7;
+                const velocity = Math.random() * 80 + 40; // Reduced velocity
+                const gravity = 300; // Reduced gravity
+                const life = Math.random() * 0.8 + 0.5; // Shorter life
                 let vx = Math.cos(angle) * velocity;
                 let vy = Math.sin(angle) * velocity;
                 let startTime = Date.now();
+                
                 function animate() {
                     const elapsed = (Date.now() - startTime) / 1000;
                     if (elapsed < life) {
@@ -819,7 +833,7 @@
                         confetti.style.left = newX + 'px';
                         confetti.style.top = newY + 'px';
                         confetti.style.opacity = (1 - elapsed / life).toString();
-                        confetti.style.transform = `rotate(${elapsed * 180}deg)`;
+                        confetti.style.transform = `rotate(${elapsed * 120}deg)`;
                         requestAnimationFrame(animate);
                     } else {
                         confetti.remove();
@@ -829,9 +843,15 @@
                 animate();
             }
         }
-        // Add confetti on button clicks
+        
+        // Add confetti on button clicks with throttling
+        let lastConfettiTime = 0;
         document.querySelectorAll('button, .cta-button').forEach(button => {
             button.addEventListener('click', (e) => {
+                const now = Date.now();
+                if (now - lastConfettiTime < 1000) return; // Throttle to once per second
+                lastConfettiTime = now;
+                
                 const rect = e.target.getBoundingClientRect();
                 const x = rect.left + rect.width / 2;
                 const y = rect.top + rect.height / 2;
@@ -839,7 +859,68 @@
             });
         });
 
-        // Remove floating decoration setInterval for performance
+        // Optimized Intersection Observer for scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target); // Stop observing once visible
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animations
+        document.querySelectorAll('.fade-in, .slide-left, .slide-right').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Optimized navbar scroll effect with throttling
+        let scrollTimeout = null;
+        const navbar = document.querySelector('.navbar');
+        
+        function handleScroll() {
+            if (window.scrollY > 100) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+            scrollTimeout = null;
+        }
+        
+        window.addEventListener('scroll', () => {
+            if (!scrollTimeout) {
+                scrollTimeout = requestAnimationFrame(handleScroll);
+            }
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Mobile menu toggle (if needed in future)
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const navLinks = document.querySelector('.nav-links');
+        
+        if (mobileMenu) {
+            mobileMenu.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+            });
+        }
     </script>
 </body>
 </html>
