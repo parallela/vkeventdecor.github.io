@@ -113,7 +113,7 @@
         }
 
         .logo img {
-            height: 70px; /* Increased from 50px */
+            height: 90px; /* Increased from 70px */
             width: auto;
             border-radius: 10px;
         }
@@ -209,8 +209,8 @@
         }
 
         .hero-logo {
-            width: 180px; /* Increased from 120px */
-            height: 180px; /* Increased from 120px */
+            width: 240px; /* Increased from 180px */
+            height: 240px; /* Increased from 180px */
             border-radius: 50%;
             margin: 0 auto 2rem;
             box-shadow: 0 20px 40px rgba(212, 175, 55, 0.3);
@@ -601,6 +601,37 @@
 
         .floating-element:nth-child(3) {
             animation-delay: -2s;
+        }
+
+        /* Balloons */
+        .balloon {
+            position: fixed;
+            font-size: 2rem;
+            pointer-events: none;
+            z-index: 9995;
+            user-select: none;
+        }
+
+        .balloon-float {
+            animation: balloonFloat 4s ease-in-out infinite;
+        }
+
+        @keyframes balloonFloat {
+            0% {
+                transform: translateY(0) rotate(0deg) scale(1);
+            }
+            25% {
+                transform: translateY(-8px) rotate(-5deg) scale(1.1);
+            }
+            50% {
+                transform: translateY(-15px) rotate(5deg) scale(1.2);
+            }
+            75% {
+                transform: translateY(-8px) rotate(-3deg) scale(1.1);
+            }
+            100% {
+                transform: translateY(0) rotate(0deg) scale(1);
+            }
         }
     </style>
 </head>
@@ -1006,6 +1037,122 @@
 
         // Create floating decorations periodically
         setInterval(createFloatingDecoration, 3000);
+
+        // Enhanced Balloon Animation on Mouse Movement
+        let balloonTimeout = null;
+        const balloonColors = ['#D4AF37', '#F8BBD9', '#E8B4B8', '#FF69B4', '#FFD700', '#FF1493', '#32CD32'];
+        const balloonEmojis = ['🎈', '🎈', '🎈', '🎈', '🎈']; // All balloons for consistency
+        const balloonDirections = [
+            { x: -1, y: -1 }, // Up-left
+            { x: 0, y: -1 },  // Up
+            { x: 1, y: -1 },  // Up-right
+            { x: -0.5, y: -1 }, // Slight left-up
+            { x: 0.5, y: -1 }   // Slight right-up
+        ];
+
+        function createMouseBalloon(x, y) {
+            const balloon = document.createElement('div');
+            balloon.className = 'balloon';
+            balloon.textContent = balloonEmojis[Math.floor(Math.random() * balloonEmojis.length)];
+            balloon.style.color = balloonColors[Math.floor(Math.random() * balloonColors.length)];
+            balloon.style.fontSize = Math.random() * 1.5 + 1.5 + 'rem'; // Varied sizes
+            balloon.style.left = x + Math.random() * 60 - 30 + 'px'; // Wider spread
+            balloon.style.top = y + Math.random() * 60 - 30 + 'px';
+            
+            // Choose random direction
+            const direction = balloonDirections[Math.floor(Math.random() * balloonDirections.length)];
+            const speed = Math.random() * 80 + 60; // Varied speed
+            const rotationSpeed = Math.random() * 360 + 180; // Random rotation
+            
+            document.body.appendChild(balloon);
+            
+            // Enhanced animation with multiple movement patterns
+            let startTime = Date.now();
+            const duration = Math.random() * 2000 + 3000; // 3-5 seconds
+            const initialX = parseFloat(balloon.style.left);
+            const initialY = parseFloat(balloon.style.top);
+            
+            function animateBalloon() {
+                const elapsed = Date.now() - startTime;
+                const progress = elapsed / duration;
+                
+                if (progress < 1 && document.body.contains(balloon)) {
+                    // Enhanced movement with curves and waves
+                    const waveAmplitude = 20;
+                    const waveFrequency = 4;
+                    
+                    const newY = initialY + (direction.y * speed * progress);
+                    const newX = initialX + (direction.x * speed * progress * 0.7) + 
+                                Math.sin(progress * Math.PI * waveFrequency) * waveAmplitude;
+                    
+                    balloon.style.top = newY + 'px';
+                    balloon.style.left = newX + 'px';
+                    
+                    // Dynamic scaling and rotation
+                    const scale = 0.8 + (0.4 * Math.sin(progress * Math.PI * 2));
+                    const rotation = progress * rotationSpeed;
+                    balloon.style.transform = `scale(${scale}) rotate(${rotation}deg)`;
+                    
+                    // Fade out towards the end
+                    balloon.style.opacity = (1 - Math.pow(progress, 2)).toString();
+                    
+                    requestAnimationFrame(animateBalloon);
+                } else {
+                    if (document.body.contains(balloon)) {
+                        balloon.remove();
+                    }
+                }
+            }
+            animateBalloon();
+        }
+
+        // Enhanced mouse movement balloon creation with burst effects
+        document.addEventListener('mousemove', (e) => {
+            // Clear previous timeout to avoid too many balloons
+            if (balloonTimeout) {
+                clearTimeout(balloonTimeout);
+            }
+            
+            // Create balloon with slight delay to control frequency
+            balloonTimeout = setTimeout(() => {
+                // Only create balloons occasionally (random chance)
+                if (Math.random() < 0.12) { // 12% chance on each mouse move
+                    createMouseBalloon(e.clientX, e.clientY);
+                }
+            }, 80); // Slightly faster response
+        });
+
+        // Create balloon bursts on special interactions
+        document.querySelectorAll('.cta-button, .gallery-item, .logo').forEach(element => {
+            element.addEventListener('mouseenter', (e) => {
+                // Create burst of balloons with varied timing and positions
+                for (let i = 0; i < 5; i++) {
+                    setTimeout(() => {
+                        const rect = element.getBoundingClientRect();
+                        const x = rect.left + rect.width / 2 + Math.random() * 120 - 60;
+                        const y = rect.top + rect.height / 2 + Math.random() * 120 - 60;
+                        createMouseBalloon(x, y);
+                    }, i * 150);
+                }
+            });
+        });
+
+        // Create balloon celebration on scroll milestones
+        let lastScrollY = 0;
+        window.addEventListener('scroll', () => {
+            const currentScrollY = window.pageYOffset;
+            const scrollDifference = Math.abs(currentScrollY - lastScrollY);
+            
+            // Create balloons on significant scroll movements
+            if (scrollDifference > 200) {
+                if (Math.random() < 0.3) { // 30% chance
+                    const x = Math.random() * window.innerWidth;
+                    const y = window.innerHeight;
+                    createMouseBalloon(x, y);
+                }
+                lastScrollY = currentScrollY;
+            }
+        });
     </script>
 </body>
 </html>
