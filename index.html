@@ -5,33 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VK Event Decor - Луксозни декорации за събития</title>
     
-    <!-- Google Fonts Bulgarian Cyrillic -->
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Playfair+Display:wght@400;700&family=Montserrat:wght@400;700&display=swap&subset=cyrillic" rel="stylesheet">
+    <!-- Google Fonts: Pacifico for decorative headings, Montserrat for body, Playfair Display for secondary headings -->
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Playfair+Display:wght@400;700&family=Montserrat:wght@400;700&display=swap&subset=cyrillic" rel="stylesheet">
     
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
-        /* Graphik font-face (assumes you upload .woff2 files to fonts/) */
-        @font-face {
-            font-family: 'Graphik';
-            src: url('fonts/Graphik-Regular.woff2') format('woff2'),
-                 url('fonts/Graphik-Regular.woff') format('woff');
-            font-weight: 400;
-            font-style: normal;
-            font-display: swap;
-            unicode-range: U+0400-04FF, U+0020-007F; /* Cyrillic + Latin */
-        }
-        @font-face {
-            font-family: 'Graphik';
-            src: url('fonts/Graphik-Bold.woff2') format('woff2'),
-                 url('fonts/Graphik-Bold.woff') format('woff');
-            font-weight: 700;
-            font-style: normal;
-            font-display: swap;
-            unicode-range: U+0400-04FF, U+0020-007F;
-        }
-
         :root {
             --gold: #D4AF37;
             --rose-gold: #E8B4B8;
@@ -50,14 +30,14 @@
         }
 
         body {
-            font-family: 'Graphik', 'Montserrat', 'Arial', sans-serif;
+            font-family: 'Montserrat', 'Arial', sans-serif;
             line-height: 1.6;
             overflow-x: hidden;
             cursor: none;
             background: linear-gradient(135deg, var(--cream) 0%, rgba(248, 187, 217, 0.1) 100%);
         }
 
-        /* Custom Cursor */
+        /* Custom Cursor with subtle flicker */
         .custom-cursor {
             position: fixed;
             width: 20px;
@@ -68,6 +48,12 @@
             z-index: 9999;
             transition: transform 0.1s ease;
             box-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
+            animation: cursorFlicker 1.2s infinite alternate;
+        }
+        @keyframes cursorFlicker {
+            0% { opacity: 1; box-shadow: 0 0 20px rgba(212,175,55,0.5); }
+            50% { opacity: 0.85; box-shadow: 0 0 24px rgba(212,175,55,0.7); }
+            100% { opacity: 1; box-shadow: 0 0 20px rgba(212,175,55,0.5); }
         }
 
         /* Confetti */
@@ -129,7 +115,7 @@
         }
 
         .logo-text {
-            font-family: 'Dancing Script', cursive;
+            font-family: 'Pacifico', cursive;
             font-size: 2rem;
             font-weight: 700;
             background: linear-gradient(45deg, var(--gold), var(--pink));
@@ -228,7 +214,7 @@
         }
 
         .hero h1 {
-            font-family: 'Dancing Script', cursive;
+            font-family: 'Pacifico', cursive;
             font-size: clamp(3rem, 8vw, 6rem);
             font-weight: 700;
             background: linear-gradient(45deg, var(--gold), var(--pink), var(--rose-gold));
@@ -295,7 +281,7 @@
         }
 
         .section-title h2 {
-            font-family: 'Dancing Script', cursive;
+            font-family: 'Pacifico', cursive;
             font-size: clamp(2.5rem, 5vw, 4rem);
             font-weight: 600;
             background: linear-gradient(45deg, var(--gold), var(--pink));
@@ -326,7 +312,7 @@
         }
 
         .about-text h3 {
-            font-family: 'Graphik', 'Playfair Display', serif;
+            font-family: 'Playfair Display', serif;
             font-size: 1.8rem;
             color: var(--gold);
             margin-bottom: 1rem;
@@ -385,7 +371,7 @@
         }
 
         .gallery-content h3 {
-            font-family: 'Graphik', 'Playfair Display', serif;
+            font-family: 'Playfair Display', serif;
             font-size: 1.5rem;
             color: var(--gold);
             margin-bottom: 0.5rem;
@@ -447,7 +433,7 @@
         }
 
         .contact-info h3 {
-            font-family: 'Graphik', 'Playfair Display', serif;
+            font-family: 'Playfair Display', serif;
             font-size: 1.8rem;
             color: var(--gold);
             margin-bottom: 1rem;
@@ -613,37 +599,38 @@
             animation-delay: -2s;
         }
 
-        /* Balloons */
-        .balloon {
-            position: fixed;
-            font-size: 2rem;
-            pointer-events: none;
-            z-index: 9995;
-            user-select: none;
-        }
-
-        .balloon-float {
-            animation: balloonFloat 4s ease-in-out infinite;
-        }
-
-        @keyframes balloonFloat {
-            0% {
-                transform: translateY(0) rotate(0deg) scale(1);
-            }
-            25% {
-                transform: translateY(-8px) rotate(-5deg) scale(1.1);
-            }
-            50% {
-                transform: translateY(-15px) rotate(5deg) scale(1.2);
-            }
-            75% {
-                transform: translateY(-8px) rotate(-3deg) scale(1.1);
-            }
-            100% {
-                transform: translateY(0) rotate(0deg) scale(1);
-            }
-        }
+        /* Remove balloon CSS classes */
     </style>
+
+    <!-- SEO & Social Media Metadata -->
+    <meta name="description" content="VK Event Decor - Луксозни декорации за сватби, рождени дни, корпоративни събития и празненства в България. Създаваме магични моменти с професионализъм и стил.">
+    <meta name="keywords" content="декорация на събития, сватбена декорация, декорация за рожден ден, корпоративна декорация, украса за празненства, луксозни декорации, VK Event Decor, Ванеса и Камелия, декоратор София, декоратор България, event decoration Bulgaria, wedding decoration, birthday decoration, corporate event decor, luxury event decor">
+    <meta name="author" content="VK Event Decor - Vanessa & Kamelia">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://vkeventdecor.com/">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="language" content="bg">
+    <meta name="geo.region" content="BG">
+    <meta name="geo.placename" content="Sofia, Bulgaria">
+    <meta name="google-site-verification" content="YOUR_GOOGLE_VERIFICATION_CODE_HERE">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="VK Event Decor - Луксозни декорации за събития">
+    <meta property="og:description" content="Луксозни декорации за сватби, рождени дни, корпоративни събития и празненства в България. Създаваме магични моменти с професионализъм и стил.">
+    <meta property="og:url" content="https://vkeventdecor.com/">
+    <meta property="og:image" content="https://vkeventdecor.com/logo.jpg">
+    <meta property="og:site_name" content="VK Event Decor">
+    <meta property="og:locale" content="bg_BG">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="VK Event Decor - Луксозни декорации за събития">
+    <meta name="twitter:description" content="Луксозни декорации за сватби, рождени дни, корпоративни събития и празненства в България. Създаваме магични моменти с професионализъм и стил.">
+    <meta name="twitter:image" content="https://vkeventdecor.com/logo.jpg">
+    <meta name="twitter:site" content="@vkeventdecor">
+    <meta name="twitter:creator" content="@vkeventdecor">
+    <!-- End SEO & Social Media Metadata -->
 </head>
 <body>
     <!-- Custom Cursor -->
@@ -790,7 +777,7 @@
 
     <!-- JavaScript -->
     <script>
-        // Custom Cursor (single, elegant)
+        // Custom Cursor (single, elegant, flicker only)
         const cursor = document.querySelector('.custom-cursor');
         let mouseX = 0, mouseY = 0;
         document.addEventListener('mousemove', (e) => {
@@ -799,10 +786,6 @@
             cursor.style.left = mouseX - 10 + 'px';
             cursor.style.top = mouseY - 10 + 'px';
         });
-
-        // Limit cursor animation to gold circle only
-        cursor.style.background = '#D4AF37';
-        cursor.style.boxShadow = '0 0 20px rgba(212, 175, 55, 0.5)';
 
         // Confetti Animation (optimized)
         let confettiCount = 0;
@@ -856,69 +839,6 @@
             });
         });
 
-        // Balloon Animation (optimized)
-        let balloonCount = 0;
-        const maxBalloons = 10;
-        const balloonColors = ['#D4AF37', '#F8BBD9', '#E8B4B8', '#FF69B4', '#FFD700'];
-        const balloonEmojis = ['🎈'];
-        const balloonDirections = [
-            { x: -1, y: -1 }, { x: 0, y: -1 }, { x: 1, y: -1 }
-        ];
-        function createMouseBalloon(x, y) {
-            if (balloonCount >= maxBalloons) return;
-            balloonCount++;
-            const balloon = document.createElement('div');
-            balloon.className = 'balloon';
-            balloon.textContent = balloonEmojis[0];
-            balloon.style.color = balloonColors[Math.floor(Math.random() * balloonColors.length)];
-            balloon.style.fontSize = Math.random() * 1.2 + 1.2 + 'rem';
-            balloon.style.left = x + Math.random() * 40 - 20 + 'px';
-            balloon.style.top = y + Math.random() * 40 - 20 + 'px';
-            const direction = balloonDirections[Math.floor(Math.random() * balloonDirections.length)];
-            const speed = Math.random() * 60 + 40;
-            document.body.appendChild(balloon);
-            let startTime = Date.now();
-            const duration = Math.random() * 1200 + 1800;
-            const initialX = parseFloat(balloon.style.left);
-            const initialY = parseFloat(balloon.style.top);
-            function animateBalloon() {
-                const elapsed = Date.now() - startTime;
-                const progress = elapsed / duration;
-                if (progress < 1 && document.body.contains(balloon)) {
-                    const newY = initialY + (direction.y * speed * progress);
-                    const newX = initialX + (direction.x * speed * progress * 0.7);
-                    balloon.style.top = newY + 'px';
-                    balloon.style.left = newX + 'px';
-                    balloon.style.opacity = (1 - progress).toString();
-                    requestAnimationFrame(animateBalloon);
-                } else {
-                    if (document.body.contains(balloon)) {
-                        balloon.remove();
-                        balloonCount--;
-                    }
-                }
-            }
-            animateBalloon();
-        }
-        // Mousemove balloon creation (much lower probability)
-        document.addEventListener('mousemove', (e) => {
-            if (Math.random() < 0.03) { // 3% chance per mousemove
-                createMouseBalloon(e.clientX, e.clientY);
-            }
-        });
-        // Balloon burst on special interactions (fewer balloons)
-        document.querySelectorAll('.cta-button, .gallery-item, .logo').forEach(element => {
-            element.addEventListener('mouseenter', (e) => {
-                for (let i = 0; i < 2; i++) {
-                    setTimeout(() => {
-                        const rect = element.getBoundingClientRect();
-                        const x = rect.left + rect.width / 2 + Math.random() * 40 - 20;
-                        const y = rect.top + rect.height / 2 + Math.random() * 40 - 20;
-                        createMouseBalloon(x, y);
-                    }, i * 120);
-                }
-            });
-        });
         // Remove floating decoration setInterval for performance
     </script>
 </body>
